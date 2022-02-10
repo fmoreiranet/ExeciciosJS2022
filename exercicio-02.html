@@ -12,9 +12,19 @@
 
     <h3>2) Escreva um programa para ler uma temperatura em graus Fahrenheit, calcular e escrever o valor correspondente em graus Celsius. (C = (F-32 * 5 / 9)</h3>
 
+    <form>
+        <input type="text" id="F" onkeyup="convertCelsius()">
+    </form>
+    <span id="resposta"></span>
+
 </body>
 
 </html>
 
 <script>
+    function convertCelsius() {
+        var f = parseFloat(document.getElementById("F").value);
+        var resp = (f - 32) * (5 / 9);
+        document.getElementById("resposta").innerHTML = "<b> Resposta: </b>" + resp
+    }
 </script>
