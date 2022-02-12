@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio-7</title>
+</head>
+
+<body>
+    <p>7) A equipe Benneton-Ford deseja calcular o número mínimo de litros que deverá colocar no tanque de seu carro para que ele possa percorrer um determinado número de voltas até o primeiro reabastecimento. Escreva um programa que leia o comprimento da
+        pista (em metros), o número total de voltas a serem percorridas no grande prêmio, o número de abastecimentos desejados e o consumo de combustível do carro (em Km/L). Calcular e escrever o número mínimo de litros necessários para percorrer até
+        o primeiro reabastecimento. OBS: Considere que o número de voltas entre os abastecimentos é o mesmo.</p>
+
+    <form>
+        <input type="text" id="comp" placeholder="Comprimento da pista(metros)?">
+        <input type="text" id="total_voltas" placeholder="Total de voltas?">
+        <input type="text" id="quant_abast" placeholder="Quantidade de abastecimentos?">
+        <input type="text" id="consumo" placeholder="Consumo do veiculo?">
+        <button type="button" onclick="quantLitros()">OK</button>
+    </form>
+    <span id="saida"></span>
+</body>
+
+</html>
+
+<script>
+    function quantLitros() {
+        var comp = parseFloat(document.getElementById("comp").value);
+        var totalVoltas = parseInt(document.getElementById("total_voltas").value);
+        var quantAbast = parseInt(document.getElementById("quant_abast").value);
+        var consumo = parseFloat(document.getElementById("consumo").value);
+
+        var litros = (((comp / 1000) * totalVoltas) / consumo) / quantAbast;
+
+        document.getElementById("saida").innerHTML = "Quantidade de litros:" + litros + "L";
+    }
+</script>
