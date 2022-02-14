@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção - 09</title>
+</head>
+
+<body>
+    <p>9) As maçãs custam R$ 0,30 cada se forem compradas menos do que uma dúzia, e R$ 0,25 se forem compradas pelo menos doze. Escreva um programa que leia o número de maçãs compradas, calcule e escreva o valor total da compra.
+    </p>
+    <form>
+        <input type="text" id="quant" placeholder="Digite a Quantidade">
+        <button type="button" onclick="principal()">Calcular</button>
+    </form>
+    <span id="saida"></span>
+</body>
+
+</html>
+
+<script>
+    function principal() {
+        var rapadura = parseInt(document.getElementById("quant").value);
+
+        document.getElementById("saida").innerHTML = "Valor a Pagar: " + calcularValores(rapadura, 24, .10);
+
+    }
+
+    function calcularValores(quantidade = 0, minQuant = 12, valorMin = .25, valorMax = .30) {
+        var valorUnit = 0;
+        if (quantidade >= minQuant) {
+            valorUnit = valorMin;
+        } else {
+            valorUnit = valorMax;
+        }
+        var resp = quantidade * valorUnit;
+        return resp;
+    }
+</script>
