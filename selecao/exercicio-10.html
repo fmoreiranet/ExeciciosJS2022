@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção - 10</title>
+</head>
+
+<body>
+    <p>Escreva um programa para ler 3 valores inteiros (considere que não serão lidos valores iguais) e escrevê-los em ordem crescente.
+    </p>
+    <form>
+        <input type="number" id="v1" placeholder="Digite um valor">
+        <input type="number" id="v2" placeholder="Digite outro valor">
+        <input type="number" id="v3" placeholder="Digite o ultimo valor">
+        <button type="button" onclick="mainController()">Ordenar</button>
+    </form>
+    <span id="saida"></span>
+</body>
+
+</html>
+
+<script>
+    function mainController() {
+        var A = parseInt(document.getElementById("v1").value);
+        var B = parseInt(document.getElementById("v2").value);
+        var C = parseInt(document.getElementById("v3").value);
+
+        document.getElementById('saida').innerHTML = ordenar(A, B, C);
+    }
+
+    function ordenar(a = 40, b = 20, c = 3) {
+        var temp = 0;
+        if (a > b) {
+            temp = a; // 'temp' recebe 'a' logo temp = 40 e a = 40
+            a = b; // a = 40, mas a = b  entao a = 20 e b =20
+            b = temp; // b = 20 recebe temp = 40 logo b = 40 no final a = 20, b = 40 e temp = 40
+        }
+
+        if (a > c) { // a = 20 e o c = 3
+            temp = c; // temp = 40 ele recebe 'c' que vale 3 logo: temp = 3 e c = 3
+            c = a; // 'c' recebe a logo: c = 20 e a = 20
+            a = temp; // 'a' que vale 20 recebe 'temp' que vale 3 logo: a = 3 e c = 20
+        }
+
+        if (b > c) { // b = 40 e c = 20
+            temp = b; // temp = 3 ele recebe 'b' que vale 40 logo: temp = 40 e b = 40
+            b = c; // 'b' recebe 'c' logo: b = 20 e c = 20
+            c = temp; // 'c' que vale 20 recebe 'temp' que vale 40 log:o b = 20 e c = 40
+        }
+
+        return " " + a + ", " + b + ", " + c
+    }
+</script>
