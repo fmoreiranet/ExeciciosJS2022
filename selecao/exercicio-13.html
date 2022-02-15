@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção - 13</title>
+</head>
+
+<body>
+    <p>13) Escreva um programa para ler um número inteiro (considere que serão lidos apenas valores positivos e inteiros) e escrever se é par ou ímpar.
+    </p>
+    <form>
+        <input type="number" id="v1" placeholder="Digite um valor">
+        <button type="button" onclick="mainController()">Ordenar</button>
+    </form>
+    <span id="saida"></span>
+</body>
+
+</html>
+
+<script>
+    function mainController() {
+        var A = parseInt(document.getElementById("v1").value);
+        document.getElementById('saida').innerHTML = parImpar(A);
+    }
+
+    function parImpar(a = 0) {
+        if (a % 2 == 0) { // 5 / 2 = 2 resto 1 ou 6 / 2 = 3 resto 0
+            return "PAR";
+        } else {
+            return "IMPAR";
+        }
+    }
+</script>
