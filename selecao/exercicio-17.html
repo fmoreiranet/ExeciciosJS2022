@@ -8,7 +8,9 @@
     <title>Seleção - 17</title>
     <style>
         button,
-        label {
+        label,
+        select,
+        input {
             display: table;
         }
     </style>
@@ -18,21 +20,24 @@
     <p>17) Escreva um programa para ler 2 valores inteiros e uma das seguintes operações a serem executadas (codificada da seguinte forma: 1. Adição, 2.Subtração, 3.Divisão, 4.Multiplicação). Calcular e escrever o resultado dessa operação sobre os dois valores
         lidos. Observação: Considere que só serão lidos os valores 1, 2, 3 ou 4. </p>
     <form>
+        <label for="v1">Digite o valor1</label>
         <input type="number" id="v1" name="v1" placeholder="Digite o valor1">
+        <label for="v1">Digite o valor2</label>
         <input type="number" id="v2" name="v2" placeholder="Digite o valor2">
-        <input type="number" id="opc" name="opc" placeholder="Qual Operação?">
-        <p>1. Adição, 2.Subtração, 3.Divisão, 4.Multiplicação</p>
+        <!-- <input type="number" id="opc" name="opc" placeholder="Qual Operação?">
+        <p>1. Adição, 2.Subtração, 3.Divisão, 4.Multiplicação</p> -->
 
-        <input type="radio" name="opc2" value="1" checked>Adição
+        <!-- <input type="radio" name="opc2" value="1" checked>Adição
         <input type="radio" name="opc2" value="2">Subtração
         <input type="radio" name="opc2" value="3">Divisão
-        <input type="radio" name="opc2" value="4">Multiplicação
+        <input type="radio" name="opc2" value="4">Multiplicação -->
 
         <!-- <input type="checkbox" name="opc2" value="1" checked>Adição
         <input type="checkbox" name="opc2" value="2">Subtração
         <input type="checkbox" name="opc2" value="3">Divisão
         <input type="checkbox" name="opc2" value="4">Multiplicação -->
 
+        <label for="opc3">Qual Operação?</label>
         <select name="opc3" id="opc3">
             <option value="1" selected>Adição</option>
             <option value="2">Subtração</option>
@@ -55,7 +60,7 @@
         //var opc = parseInt(document.getElementById("opc").value);
         //var opc2 = document.getElementsByName("opc2");
         var opc3 = parseInt(document.getElementById("opc3").value);
-        console.log(v1, v2, opc, opc2, opc3);
+        console.log(v1, v2, opc3);
         document.getElementById("saida").innerHTML = "Resposta: " + calculo(v1, v2, opc3);
     }
 
