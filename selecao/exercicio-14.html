@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção - 14</title>
+    <style>
+        #t1 {}
+        
+        .centro {}
+    </style>
+</head>
+
+<body>
+    <p>14) Escreva um programa para ler o número de gols marcados pelo Grêmio e o número de gols marcados pelo Inter em um GRENAL. Escrever o nome do vencedor. Caso não haja vencedor deverá ser impressa a palavra EMPATE.
+    </p>
+    <form>
+        <input type="number" id="t1" placeholder="Gols Grêmio">
+        <input type="number" id="t2" placeholder="Gols Inter">
+        <button type="button" onclick="mainController()">Verificar</button>
+    </form>
+    <span id="saida"></span>
+    <span id="lista"></span>
+</body>
+
+</html>
+
+<script>
+    var listaResultados = "";
+    const titulo = "aula";
+
+    function mainController() {
+        var t2 = parseInt(document.querySelector("#t2").value);
+        document.querySelector("#saida").innerHTML = "Resultado: " + verifGols(t1, t2);
+        console.log(listaResultados);
+        document.querySelector("#lista").innerHTML = "<h3>Lista de Resultados</h3> " + listaResultados;
+    }
+
+    function verifGols(g1 = 0, g2 = 0) {
+        if (g1 == g2) {
+            listaResultados += "<p>Gremio " + g1 + " X " + g2 + " Inter - Empate </p>";
+            return "Empate!";
+        } else if (g1 > g2) {
+            listaResultados += "<p>Gremio " + g1 + " X " + g2 + " Inter - Vecedor: Grêmio </p>";
+            return "Grêmio";
+        } else {
+            listaResultados += "<p>Gremio " + g1 + " X " + g2 + " Inter - Vecedor: Inter </p>";
+            return "Inter";
+        }
+    }
+</script>

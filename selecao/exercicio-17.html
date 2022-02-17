@@ -38,15 +38,15 @@
         <input type="checkbox" name="opc2" value="4">Multiplicação -->
 
         <label for="opc3">Qual Operação?</label>
-        <select name="opc3" id="opc3">
+        <select name="opc3" id="opc3" onchange="mainController()">
             <option value="1" selected>Adição</option>
             <option value="2">Subtração</option>
-            <option value="3">Divisão</option>
-            <option value="4">Multiplicação</option>
+            <option value="3">Multiplicação</option>
+            <option value="4">Divisão</option>
         </select>
 
         <!-- <button type="submit">Enviar</button> -->
-        <button type="button" onclick="mainController()">Calcular</button>
+        <button type="button" onclick="mainController()"> Calcular </button>
     </form>
     <span id="saida"></span>
 </body>
