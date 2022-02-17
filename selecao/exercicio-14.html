@@ -32,6 +32,7 @@
     const titulo = "aula";
 
     function mainController() {
+        var t1 = parseInt(document.querySelector("#t1").value); //document.getElementBYId == querySelector("#"
         var t2 = parseInt(document.querySelector("#t2").value);
         document.querySelector("#saida").innerHTML = "Resultado: " + verifGols(t1, t2);
         console.log(listaResultados);
