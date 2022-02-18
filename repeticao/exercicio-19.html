@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repeticao - 19</title>
+</head>
+<script>
+    var contClick = 0;
+</script>
+
+<body onclick="contClick++; document.querySelector('#saida2').innerHTML=contClick">
+    <span></span>
+    <p>19) Escreva um programa para determinar e escrever a soma dos números pares de 100 a 200, inclusive.
+    </p>
+    <!-- <form>
+        <input type="text" id="numero" placeholder="Digite um numero" onkeyup="verfNNumero()">
+        <button type="button" onclick="verfNNumero()">OK</button>
+    </form> -->
+    <button type="button" onclick="maincontroller()">OK</button>
+    <span id="saida"></span>
+    <span id="saida2"></span>
+
+</body>
+
+</html>
+
+<script>
+    function maincontroller() {
+        document.querySelector("#saida").innerHTML = somaParesWhile();
+    }
+
+    function somaPares() {
+        var soma = 0;
+        var numeros = "";
+        for (var num = 100; num <= 200; num++) { //num = num + 1
+            if (num % 2 == 0) {
+                soma += num; //soma = soma + num
+                numeros += " " + num;
+            }
+        }
+        return "Soma: " + soma + "<br>Numeros: " + numeros;
+    }
+
+    function somaParesWhile() {
+        var soma = 0;
+        var num = 100;
+        var numeros = "";
+        while (num <= 200) {
+            if (num % 2 == 0) {
+                soma += num; //soma = soma + num
+                numeros += " " + num;
+            }
+            num++;
+        }
+        return "Soma: " + soma + "<br>Numeros: " + numeros;
+    }
+</script>
