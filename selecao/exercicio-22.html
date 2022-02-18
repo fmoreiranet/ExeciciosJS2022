@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção - 22</title>
+</head>
+
+<body>
+    <p>22) Escreva um programa que leia a idade de 2 homens e 2 mulheres (considere que a idade dos homens será sempre diferente, assim como das mulheres). Calcule e escreva a soma das idades do homem mais velho com a mulher mais nova, e o produto das idades
+        do homem mais novo com a mulher mais velha.
+    </p>
+    <form>
+        <input type="number" id="h1" placeholder="Idade Homem 1">
+        <input type="number" id="h2" placeholder="Idade Homem 2">
+        <input type="number" id="m1" placeholder="Idade Mulher 1">
+        <input type="number" id="m2" placeholder="Idade Mulher 2">
+        <button type="button" onclick="mainController()">Verificar</button>
+    </form>
+    <span id="saida"></span>
+</body>
+
+</html>
+
+<script>
+    function mainController() {
+        var h1 = parseInt(document.querySelector("#h1").value);
+        var h2 = parseInt(document.querySelector("#h2").value);
+        var m1 = parseInt(document.querySelector("#m1").value);
+        var m2 = parseInt(document.querySelector("#m2").value);
+
+        var resposta = "";
+        var erros = validaDados(h1, h2, m1, m2);
+        if (erros != "") {
+            resposta = erros;
+        } else {
+            resposta = verifIdade(h1, h2, m1, m2);
+        }
+        document.querySelector("#saida").innerHTML = resposta;
+    }
+
+    function verifIdade(hom1 = 0, hom2 = 0, mul1 = 0, mul2 = 0) {
+        var maxHomem = 0,
+            maxMulher = 0,
+            minHomem = 0,
+            minMulher = 0;
+
+        // if (hom1 == hom2) {
+        //     return "Idades dos homens são iguais!"
+        // }
+
+        // if (mul1 == mul2) {
+        //     return "Idades das mulheres são iguais!"
+        // }
+
+        if (hom1 > hom2) {
+            maxHomem = hom1;
+            minHomem = hom2;
+        } else {
+            maxHomem = hom2;
+            minHomem = hom1;
+        }
+
+        if (mul1 > mul2) {
+            maxMulher = mul1;
+            minMulher = mul2;
+        } else {
+            maxMulher = mul2;
+            minMulher = mul1;
+        }
+
+        return "<div><p> Soma Idade: " + (maxHomem + minMulher) + "</p><p> Produto Idade: " + (minHomem * maxMulher) + "</p></div>";
+    }
+
+    function validaDados(hom1 = 0, hom2 = 0, mul1 = 0, mul2 = 0) {
+        var erros = "";
+        if (hom1 == hom2) {
+            erros += "Idades dos homens são iguais!<br>"
+        }
+
+        if (mul1 == mul2) {
+            erros += "Idades das mulheres são iguais!<br>"
+        }
+        return erros;
+    }
+</script>
