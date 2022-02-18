@@ -33,7 +33,7 @@
 
         var resposta = "";
         var erros = validaDados(h1, h2, m1, m2);
-        if (erros.isEm) {
+        if (erros != "") {
             resposta = erros;
         } else {
             resposta = verifIdade(h1, h2, m1, m2);
