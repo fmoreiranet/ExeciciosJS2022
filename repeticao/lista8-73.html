@@ -9,20 +9,32 @@
 </head>
 
 <body>
-    <p>1
+    <p>73) Faça um algoritmo que determine o maior entre N números. A condição de parada é a entrada de um valor 0, ou seja, o algoritmo deve processar o maior até que a entrada seja igual a 0 (ZERO).
     </p>
-    <!-- <form>
-        <input type="text" id="numero" placeholder="Digite um numero" onkeyup="verfNNumero()">
-        <button type="button" onclick="verfNNumero()">OK</button>
-    </form> -->
-    <button type="button" onclick="maincontroller()">OK</button>
+    <form>
+        <input type="number" id="numero" placeholder="Digite um numero">
+        <button type="button" onclick="maincontroller()">Entrar</button>
+    </form>
     <span id="saida"></span>
 </body>
 
 </html>
 
 <script>
+    var maior = 0;
+
     function maincontroller() {
-        document.querySelector("#saida").innerHTML = somaParesWhile();
+        var numero = parseFloat(document.getElementById("numero").value);
+        document.querySelector("#saida").innerHTML = verifNumeros(numero);
+    }
+
+    function verifNumeros(numero = 0) {
+        if (numero != 0) {
+            if (numero > maior) {
+                maior = numero;
+            }
+            return "";
+        }
+        return "O maior numero: " + maior;
     }
 </script>
