@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção - 21</title>
+</head>
+<script src="../js/triangulo.js"></script>
+
+<body>
+    <p>21) Escreva um programa que leia as medidas dos lados de um triângulo e escreva se ele é Equilátero, Isósceles ou Escaleno. Sendo que: - Triângulo Equilátero: possui os 3 lados iguais. - Triângulo Isósceles: possui 2 lados iguais. - Triângulo Escaleno:
+        possui 3 lados diferentes
+    </p>
+    <form>
+        <input type="number" id="LA" placeholder="Lado A">
+        <input type="number" id="LB" placeholder="Lado B">
+        <input type="number" id="LC" placeholder="Lado C">
+        <button type="button" onclick="triangulo.pegarValores(); saida(triangulo.tipoTriangulo())">Verificar</button>
+    </form>
+    <span id="saida"></span>
+</body>
+
+</html>
+
+<!-- <script>
+    //Antigo
+    function mainController() {
+        var la = parseFloat(document.querySelector("#LA").value);
+        var lb = parseFloat(document.querySelector("#LB").value);
+        var lc = parseFloat(document.querySelector("#LC").value);
+        console.log("Carregado!!!");
+        saida(tipoTriangulo(la, lb, lc));
+    }
+
+    function tipoTriangulo(a = 0, b = 0, c = 0) {
+        if (a == b && b == c) { //&& c == a) {
+            return "Equilátero"; // possui os 3 lados iguais
+        } else if (a != b && b != c && c != a) {
+            return "Escaleno" //possui 3 lados diferentes
+        }
+        //else if(a == b || b == c || c == a)
+        return "Isósceles" //possui 2 lados iguais.
+            //}
+    }
+
+    function saida(texto = "") {
+        document.querySelector("#saida").innerHTML = texto
+    }
+</script> -->
