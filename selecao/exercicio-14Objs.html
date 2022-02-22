@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção - 14 (Com Objeto)</title>
+</head>
+
+<body>
+    <p>14) Escreva um programa para ler o número de gols marcados pelo Grêmio e o número de gols marcados pelo Inter em um GRENAL. Escrever o nome do vencedor. Caso não haja vencedor deverá ser impressa a palavra EMPATE.
+    </p>
+    <form>
+        <input type="texto" id="t1" placeholder="Nome time 1">
+        <input type="texto" id="t2" placeholder="nome time 2">
+
+        <input type="number" id="g1" placeholder="Gols Time 1">
+        <input type="number" id="g2" placeholder="Gols Time 2">
+        <button type="button" onclick="
+            jogo.atualizaPlacar(
+                document.querySelector('#g1').value,
+                document.querySelector('#g2').value
+            );
+            jogo.atualizaTimes(  
+                document.querySelector('#t1').value,
+                document.querySelector('#t2').value
+            );
+            jogo.atualizaResultado();
+            document.querySelector('#saida').innerHTML=jogo.resultado
+        ">Verificar</button>
+    </form>
+    <span id="saida"></span>
+</body>
+
+</html>
+
+<script src="../js/jogo.js"></script>
