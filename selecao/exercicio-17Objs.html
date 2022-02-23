@@ -27,14 +27,16 @@
             <option value="4">Divisão</option>
         </select>
 
-        <button type="button" onclick="
+        <button type="button" onclick="calculoController.calularValor()"> Calcular </button>
+        <!-- <button type="button" onclick="
             calculo.alterarValores(
                 document.querySelector('#v1').value,
                 document.querySelector('#v2').value,
                 document.querySelector('#opc').value
             );
-            calculo.fazerOperacao()        
-        "> Calcular </button>
+            calculo.fazerOperacao();
+            document.querySelector('#saida').innerHTML = 'Resultado: ' + calculo.resultado
+        "> Calcular </button> -->
     </form>
     <span id="saida"></span>
 </body>
@@ -42,3 +44,21 @@
 </html>
 
 <script src="../js/calculo.js"></script>
+
+<script>
+    const calculoController = {
+        calularValor: function() {
+            calculo.alterarValores(
+                document.querySelector('#v1').value, //valor1
+                document.querySelector('#v2').value, //valor2
+                document.querySelector('#opc').value //opc
+            );
+            calculo.fazerOperacao();
+            //document.querySelector('#saida').innerHTML = 'Resultado: ' + calculo.resultado
+            this.mostrarResultado();
+        },
+        mostrarResultado: function() {
+            document.querySelector('#saida').innerHTML = 'Resultado: ' + calculo.resultado
+        }
+    }
+</script>
