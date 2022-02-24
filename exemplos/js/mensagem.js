@@ -5,7 +5,7 @@ const mensagem = {
     texto: "",
     atualizar: function(nome = "", email = "", tel = "", texto = "") {
         this.nomeUser = nome;
-        this.email = email;
+        this.emailUser = email;
         this.telUser = tel;
         this.texto = texto;
     },
