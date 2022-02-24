@@ -1,4 +1,4 @@
-const mainController = {
+const mensagemController = {
 
     enviar: function() {
         //1º pegar os dados
